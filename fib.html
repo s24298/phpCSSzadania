@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+    
+        #con{
+            border: solid black 2px;
+            padding: 10px;
+            width: 50%;
+            height: 200px;
+            text-align: center;
+            margin: auto auto;
+            color: rebeccapurple;
+            font-family:sans-serif;
+        }
+    
+    </style>
+<script>
+    
+function add(){
+  let a = 0, b = 1, c = n =Number(document.getElementById("first").value);
+  for(let i = 2; i <= n; i++) {
+    c = a + b;
+    a = b;
+    b = c;
+  }
+    document.getElementById("an").innerHTML = n + " wyraz ciagu to " + c;
+}
+    
+</script>
+    
+</head>
+    
+<body>
+    
+    <div id="con">
+        <h2> Ciąg fibonacciego </h2> 
+    Podaj ktory wyraz ciagu: <input type="number" min="2" id="first"> <br> <br>
+    <button onclick="add()">Add</button>
+    <p id="an"></p>
+    </div>
+    
+</body>
+</html>
