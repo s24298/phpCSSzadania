@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+
+    <style>
+        
+        body {
+            text-align: center;
+        }
+ 
+        .cell {
+            height: 30px;
+            width: 30px;
+            border: 1px solid black;
+        }
+ 
+        .blackcell {
+            background-color: black;
+        }
+ 
+        .whitecell {
+            background-color: white;
+        }
+        
+    </style>
+</head>
+ 
+<body>
+    <input type="number" min="2" id="first">
+    <button onclick="fun()">+</button>
+    
+    <br><br>
+ 
+    <script type="text/javascript">
+        function fun(){
+            
+        var n =Number(document.getElementById("first").value)
+        var center = document.createElement('center');
+        var ChessTable = document.createElement('table');
+        for (var i = 0; i < n; i++) { 
+            var tr = document.createElement('tr');
+            for (var j = 0; j < n; j++) { 
+                var td = document.createElement('td');
+                if ((i + j) % 2 == 0) {
+                    td.setAttribute('class', 'cell whitecell');
+                    tr.appendChild(td);
+                }
+                else {
+                    td.setAttribute('class', 'cell blackcell');
+                    tr.appendChild(td);
+                }
+            }
+            ChessTable.appendChild(tr);
+        }
+        center.appendChild(ChessTable);
+        ChessTable.setAttribute('cellspacing', '0');
+        ChessTable.setAttribute('width', '270px');
+        document.body.appendChild(center);
+        }
+        
+    </script>
+</body>
+ 
+</html>
